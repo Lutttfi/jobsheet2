@@ -15,12 +15,11 @@
     </form>
 </body>
 <?php
-// Fungsi untuk menentukan kategori usia
+// Fungsi untuk menentukan kategori nilai
 function kumpulanNilai($myNilai) {
     if ($myNilai <= 50) return "Tidak Lulus";
     elseif ($myNilai <= 75) return "Remidi";
-    elseif ($myNilai <= 100) return "Lulus";
-    else return "Input Salah";
+    else return "Lulus";
 }
 
 // Antarmuka Pengguna
@@ -31,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($nilai)) {
         echo "Masukkan Nilai...";
     } else {
-        // Perulangan untuk menampilkan hasil pengelompokan usia
+        // Perulangan untuk menampilkan hasil pengelompokan nilai
         foreach (explode(',', $nilai) as $myNilai) {
             $myNilai = intval($myNilai); // Konversi input ke integer
             $kelompokNilai = kumpulanNilai($myNilai);
