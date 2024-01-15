@@ -22,10 +22,6 @@ function kumpulanNilai($myNilai) {
     else return "Lulus";
 }
 
-// Antarmuka Pengguna
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nilai = $_POST['nilai'];
-
     // Validasi input
     if (empty($nilai)) {
         echo "Masukkan Nilai...";
@@ -38,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo "<p>Nilai $myNilai termasuk dalam kategori: $kelompokNilai<br></p>";
         }
     }
-}
+
 ?>
 
 </body>
